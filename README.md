@@ -1,3 +1,49 @@
+Drive link for screenshot/DEMO: https://drive.google.com/drive/folders/1rlfYUhv0NtdUCjsYF8JTIG_-dv-5hMi3?usp=drive_link
+# 📈 StockWatchApp
+
+A React Native stock and ETFs broking platform app with real-time market data, customizable watchlists, and elegant dark/light mode.  
+This project was built as part of an SDE Intern assignment.
+
+## 🚀 Features
+
+- **Explore Screen:**  
+  - View top Gainers and Losers in card layout.
+  - Search stocks using symbol.
+  - View All screen with pagination.
+
+- **Watchlist:**  
+  - Create and manage multiple watchlists.
+  - Add/remove stocks from watchlists.
+  - Persistent storage using AsyncStorage.
+
+- **Product Screen:**  
+  - See company info and a live line chart for the stock price.
+  - Change chart interval (15 min, 1 day, 1 week, 1 month).
+  - Add stock to watchlist via a popup.
+
+- **Favorites:**  
+  - Mark stocks as favorites from any screen.
+  - Manage favorites list separately.
+
+- **Dark/Light Mode:**  
+  - Toggle theme dynamically using ThemeContext.
+
+- **API:**  
+  - Integrated with [Twelve Data](https://twelvedata.com/) for live market data and charts.
+
+- **Optimizations:**  
+  - Cached API responses for reduced network usage.
+  - Optimized chart rendering and image assets.
+
+---
+
+## 🔑 Setup Instructions
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/StockWatchApp.git
+   cd StockWatchApp
+
 This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
 
 # Getting Started
