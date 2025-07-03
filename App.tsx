@@ -1,28 +1,51 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
+import React from 'react';
+import {
+  NavigationContainer,
+  DefaultTheme as NavLight,
+  DarkTheme as NavDark,
+} from '@react-navigation/native';
+import {
+  Provider as PaperProvider,
+  MD3LightTheme,
+  MD3DarkTheme,
+} from 'react-native-paper';
+import TabNavigator from './src/navigation/TabNavigator';
+import { WatchlistProvider } from './src/context/WatchlistContext';
+import { ThemeProvider, useTheme } from './src/context/ThemeContext';
 
-import { NewAppScreen } from '@react-native/new-app-screen';
-import { StatusBar, StyleSheet, useColorScheme, View } from 'react-native';
 
-function App() {
-  const isDarkMode = useColorScheme() === 'dark';
+function ThemedApp() {
+  const { isDark } = useTheme();
+
+  const paperTheme = isDark ? MD3DarkTheme : MD3LightTheme;
+  const navTheme = isDark ? NavDark : NavLight;
 
   return (
-    <View style={styles.container}>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <NewAppScreen templateFileName="App.tsx" />
-    </View>
+    <PaperProvider theme={paperTheme}>
+      <NavigationContainer theme={navTheme}>
+        <TabNavigator />
+      </NavigationContainer>
+    </PaperProvider>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});
 
-export default App;
+export default function App() {
+  return (
+    <WatchlistProvider>
+      <ThemeProvider>
+        <ThemedApp />
+      </ThemeProvider>
+    </WatchlistProvider>
+  );
+}
+
+
+
+
+
+
+
+
+
+
